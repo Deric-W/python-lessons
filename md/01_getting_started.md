@@ -145,7 +145,7 @@ def <funktionsname>([parameter_liste, ...]):
 
 ## mathematisch
 
-`+`, `-`, `*`, `/`
+`+`, `-`, `*`, `/`, `//`, `%`
 
 ## vergleichend
 
