@@ -43,7 +43,7 @@ def greet():
         return "Hello"
     return say_hello
 
-print(greet())
+print(greet()())
 # Hello
 ```
 
