@@ -260,3 +260,24 @@ Wir wollen den String `'my string 4 vier'` erzeugen.
 'string %(number)d%(name)s' % {number:4, name:'vier'}
 # via Name
 ```
+
+---
+
+## Escape-Sequenzen
+
+Wir wollen einen String mit nicht ausschreibbaren Zeichen erzeugen.
+```python
+# \n wird als Zeilenumbruch interpretiert
+
+print('Hello World!\nHello Python!')
+
+# \a lässt einen Ton erklingen
+print('\a')
+
+# \b bewegt den Cursor zurück
+print('Geheim: Passwort\b\b\b\b\b\b\b\b********')
+
+# Escape-Sequenzen stellen einzelne Zeichen dar
+len('\n') == 1
+```
+Diese und weitere Escape-Sequenzen sind von der Sprache C übernommen.
