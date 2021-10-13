@@ -303,9 +303,9 @@ g  # ==> [7, 46, 42]
 class MyManager:
     def __enter__(self):
         # tue dinge
-        pass
+        return self
 
-    def __exit__(self):
+    def __exit__(self, type, value, traceback):
         # schliesse handler etc ...
         pass
 
