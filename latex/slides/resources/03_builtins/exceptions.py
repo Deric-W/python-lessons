@@ -13,5 +13,8 @@ try:
 except (KeyError, MyException) as error:
     print(error)
     pass
+else:
+    # wird nur ausgeführt falls keine Exceptions auftreten
+    print("not gonna happen")
 finally:
     # was unbedingt zu tun ist

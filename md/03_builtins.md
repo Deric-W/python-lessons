@@ -4,6 +4,7 @@
 
 -   Alle Exceptions erben von `Exception`
 -   Catching mit try/except
+-   `else` Abschnitt wird vor `finally` ausgeführt falls keine Exception auftritt
 -   `finally` um Code auszuführen, der *unbedingt* laufen muss, egal ob
     eine Exception vorliegt oder nicht
 
@@ -30,6 +31,9 @@ try:
 except (KeyError, MyException) as error:
     print(error)
     pass
+else:
+    # wird nur ausgeführt falls keine Exceptions auftreten
+    print("not gonna happen")
 finally:
     # was unbedingt zu tun ist
 
