@@ -124,6 +124,8 @@ bereits in der Standardbibliothek mit, z.B.: `sys`, `os`, `http`, `re`,
 `functools`, `itertools`, `collections`, `hashlib`, `urllib` und viele
 mehr.
 
+Eine Liste aller Module findet man in der [offiziellen Dokumentation](https://docs.python.org/3/library/index.html).
+
 Daher bezeichnet man Python oft auch als **Batteries included**.
 
 # Packages

@@ -8,7 +8,7 @@
     -   [auditorium](http://auditorium.inf.tu-dresden.de)
     -   Google (python/python3 meine frage hier) landet oft in der
         python 2.7 Doku (Versionsswitcher im Menü)
-    -   [offizielle Dokumentation](docs.python.org)
+    -   [offizielle Dokumentation](https://docs.python.org)
     -   unsere [Github-Organisation](https://github.com/fsr)
     -   Hinweis: SCM’s sind hilfreich ([git](https://git-scm.com),
     [mercurial](http://mercurial.selenic.com/))
