@@ -19,8 +19,12 @@
 \end{frame}
 
 
-\section{Fakten über Funktionen}
-\begin{frame}{Fakten über Funktionen}
+\section{Funktionen höherer Ordnung}
+\begin{frame}{Funktionen sind Objekte}
+	Funktionen sind Objekte mit speziellen Methoden.
+	\lstinputlisting[firstline=1,lastline=13]{resources/06_decorators/higher_order.py}
+\end{frame}
+\begin{frame}{Folgen}
 	\begin{itemize}
 		\item Funktionen können Variablen zugewiesen werden,
 		\lstinputlisting[lastline=8]{resources/06_decorators/functions.py}
@@ -40,6 +44,17 @@
 		\lstinputlisting[firstline=32]{resources/06_decorators/functions.py}
 	\end{itemize}
 \end{frame}
+
+\subsection{Beispiele}
+\begin{frame}{Beispiele - map}
+	\alert{\texttt{map(function, iterable)}} wendet eine Funktion auf alle Elemente eines Iterators an.
+	\lstinputlisting[firstline=14,lastline=30]{resources/06_decorators/higher_order.py}
+\end{frame}
+\begin{frame}{Beispiele - filter}
+	\alert{\texttt{filter(function, iterable)}} gibt die Elemente eines Iterators zurück, für welche die Funktion \alert{\texttt{True}} zurückgibt.
+	\lstinputlisting[firstline=32]{resources/06_decorators/higher_order.py}
+\end{frame}
+
 
 \section{Decorator}
 \subsection{einfache Decorator}
