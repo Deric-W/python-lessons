@@ -194,27 +194,7 @@
 
 
 % #############################################################################
-% ----------------------------- 9. File Handling ------------------------------
-% #############################################################################
-\section{File Handling}
-
-\begin{frame}{File Handling}
-	\begin{itemize}
-		\item Dateien können mit \alert{\texttt{open(filename, mode="r")}} geöffnet werden
-		\item \textit{File Handler} sind Iteratoren über die Zeilen einer Datei
-		\item \textbf{Wichtig:} File Handler müssen auch wieder geschlossen werden
-		\item \texttt{r} steht für Lesezugriff,  \texttt{w} für Schreibzugriff
-	\end{itemize}
-	\textbf{Beachte:} Wird eine Datei mit Schreibzugriff geöffnet, wird sie geleert! Also wichtige Inhalte vorher auslesen.
-\end{frame}
-
-\begin{frame}{File Handling - Beispiel}
-	\lstinputlisting{resources/03_builtins/file.py}
-\end{frame}
-
-
-% #############################################################################
-% ---------------------------- 10. Context Manager ----------------------------
+% ---------------------------- 9. Context Manager ----------------------------
 % #############################################################################
 \section{Context Manager}
 
@@ -222,7 +202,7 @@
 	\begin{itemize}
 		\item Aufruf mit \alert{\texttt{with}}
 		\item kann jedes Objekt sein, welches eine \texttt{\_\_enter\_\_} und \texttt{\_\_exit\_\_} Methode hat
-		\item praktisch beim \textit{File Handling}
+		\item praktisch beim Arbeiten mit Dateien
 	\end{itemize}
 \end{frame}
 
@@ -230,5 +210,30 @@
 	\lstinputlisting{resources/03_builtins/cm.py}
 \end{frame}
 
+
+% #############################################################################
+% ----------------------------- 10. Files ------------------------------
+% #############################################################################
+\section{Files}
+
+\begin{frame}{Files}
+	\begin{itemize}
+		\item Dateien werden mit \alert{\texttt{open(filename, mode="r")}} geöffnet
+		\item \texttt{r} steht für Lesezugriff,  \texttt{w} für Schreibzugriff
+		\item \texttt{+} erlaubt zusätzlich zum Modus Lesen/Schreiben, \texttt{x} schlägt fehl wenn die Datei bereits existiert
+		\item die zurückgegebenen Objekte sind \textit{Iteratoren} über ihre Zeilen und \textit{Context Manager}
+		\item können über \alert{\texttt{.read(size=-1)}} und \alert{\texttt{.write(text)}} gelesen und geschrieben werden
+	\end{itemize}
+	\textbf{Wichtig:} Dateien müssen wieder mit \alert{\texttt{.close()}} geschlossen werden
+	\textbf{Beachte:} Wird eine Datei mit \texttt{w} geöffnet, wird sie geleert! Nutze stattdessen \texttt{r+}.
+\end{frame}
+
+\begin{frame}{Files - Beispiel}
+	\lstinputlisting[lastline=15]{resources/03_builtins/file.py}
+\end{frame}
+
+\begin{frame}{Files - Beispiel}
+	\lstinputlisting[firstline=17]{resources/03_builtins/file.py}
+\end{frame}
 
 \end{document}

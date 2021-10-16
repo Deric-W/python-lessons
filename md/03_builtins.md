@@ -304,7 +304,9 @@ any((False, True, False)) != all((False, True, False))
 -   Aufruf mit `with`
 -   kann jedes Objekt sein, welches eine `__enter__` und `__exit__`
     Methode hat
--   praktisch beim *File Handling*
+-   praktisch beim Arbeiten mit Dateien
+
+## Beispiel
 
 ---
 
@@ -330,29 +332,50 @@ with MyManager() as m:
 
 ---
 
--   Dateien können mit `open(filename, mode=r)` geöffnet werden
--   *File Handler* sind Iteratoren über die Zeilen einer Datei
--   **Wichtig:** File Handler müssen auch wieder geschlossen werden
+-   Dateien werden mit `open(filename, mode=r)` geöffnet
 -   `r` steht für Lesezugriff, `w` für Schreibzugriff  
+-   `+` erlaubt zusätzlich zum Modus Lesen/Schreiben, `x` schlägt fehl wenn die Datei bereits existiert
+-   die zurückgegebenen Objekte sind *Iteratoren* über ihre Zeilen und *Context Manager*
+-   können über `.read(size=-1)` und `.write(text)` gelesen und geschrieben werden
 
-**Beachte:** Wird eine Datei mit Schreibzugriff geöffnet, wird
-sie geleert! Also wichtige Inhalte vorher auslesen.
+**Wichtig:** Dateien müssen wieder mit `.close()` geschlossen werden
+**Beachte:** Wird eine Datei mit `w` geöffnet, wird sie geleert! Nutze stattdessen `r+`.
+
+## Beispiele
 
 ---
 
 ```python
-with open(myfile, mode='r') as f:
+# gibt alle Zeilen einer Datei aus
+with open("test1.txt", mode='r') as f:
     for line in f:
-        # code
+        print(line)
 
-with open(myfile, mode='w+') as f:
+# schreibe einen String und lese ihn wieder
+with open("test2.txt", mode='w+') as f:
+    # oder print("Test", file=f)
+    f.write("Test\n")
+    # seek ändert die Position innerhalb der Datei
+    # und gibt ihren neuen Wert zurück
+    f.seek(0) == 0
+    # tell gibt diese zurück ohne sie zu ändern
+    f.tell() == 0
+    print(f.read())
 
-    for line in document:
-        f.write(line)
-        # oder
-        print(line, file=f)
+# öffnet eine Datei falls sie nicht existiert
+try:
+    f = open("test.txt", "x")
+except FileExistsError:
+    print("Datei existiert bereits")
+else:
+    with f:
+        f.write("Erster!")
 
-f = open(myfile)
-# code
-f.close()
+# Nutzung ohne Context Manager
+f = open("test.txt")
+try:
+    # nutze die Datei
+    pass
+finally:
+    f.close()
 ```
