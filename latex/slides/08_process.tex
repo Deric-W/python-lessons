@@ -183,7 +183,7 @@
 		\item gibt Returncode des Prozesses zur\"uck \\[.5cm]
 	\end{itemize}
 	Diese Funktion macht das selbe, wie \\
-	\hspace*{1.5cm}\texttt{run(...).returncode}, \\
+	\hspace*{1.5cm}\texttt{run(\ldots).returncode}, \\
 	nur dass \textit{check} und \textit{input} nicht unterst\"utzt werden.
 \end{frame}
 
@@ -195,7 +195,7 @@
 		\item wenn Aufruf nicht erfolgreich, wird \texttt{CalledProcessError} geworfen \\[.5cm]
 	\end{itemize}
 	Diese Funktion macht das selbe, wie \\
-	\hspace*{1.5cm}\texttt{run(..., check=True)}, \\
+	\hspace*{1.5cm}\texttt{run(\ldots, check=True)}, \\
 	nur dass \textit{input} nicht unterst\"utzt wird.
 \end{frame}
 
@@ -206,7 +206,7 @@
 		\item wirft ebenfalls \texttt{CalledProcessError}, wenn der Returncode nicht 0 ist \\[.5cm]
 	\end{itemize}
 	Diese Funktion macht das selbe, wie \\
-	\hspace*{1.5cm}\texttt{run(..., check=True, stdout=PIPE).stdout}
+	\hspace*{1.5cm}\texttt{run(\ldots, check=True, stdout=PIPE).stdout}
 \end{frame}
 
 % nothing to do from here on
